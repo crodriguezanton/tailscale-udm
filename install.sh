@@ -13,14 +13,14 @@ mkdir -p /mnt/data/tailscale
 cp -R "${WORKDIR}/tailscale_${VERSION}_arm64"/* /mnt/data/tailscale/
 
 echo "Installing Tailscale upgrade script in /mnt/data/tailscale/upgrade.sh"
-curl -o /mnt/data/tailscale/upgrade.sh -sSL https://raw.githubusercontent.com/SierraSoftworks/tailscale-udm/main/upgrade.sh
+curl -o /mnt/data/tailscale/upgrade.sh -sSL https://raw.githubusercontent.com/crodriguezanton/tailscale-udm/main/upgrade.sh
 
 echo "Installing boot script for Tailscale"
-curl -o /mnt/data/on_boot.d/10-tailscaled.sh -sSL https://raw.githubusercontent.com/SierraSoftworks/tailscale-udm/main/on_boot.d/10-tailscaled.sh
+curl -o /mnt/data/on_boot.d/10-tailscaled.sh -sSL https://raw.githubusercontent.com/crodriguezanton/tailscale-udm/main/on_boot.d/10-tailscaled.sh
 chmod +x /mnt/data/on_boot.d/10-tailscaled.sh
 
 echo "Installing tailscale env script"
-curl -o /mnt/data/tailscale/tailscale-env -sSL https://raw.githubusercontent.com/SierraSoftworks/tailscale-udm/main/tailscale-env
+curl -o /mnt/data/tailscale/tailscale-env -sSL https://raw.githubusercontent.com/crodriguezanton/tailscale-udm/main/tailscale-env
 
 echo "Starting tailscaled service"
 /mnt/data/on_boot.d/10-tailscaled.sh
